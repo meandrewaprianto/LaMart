@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\KategoriController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +19,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Kategori Route
+Route::group(['middleware' => ['web','cekuser:1']], function(){
+  Route::get('kategori/data', [KategoriController::class, 'listData'])->name('kategori.data');
+  Route::resource('kategori', App\Http\Controllers\KategoriController::class);
+});

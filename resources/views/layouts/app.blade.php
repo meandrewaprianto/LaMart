@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -16,8 +16,20 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('adminLTE/plugins/fontawesome-free/css/all.min.css') }}"/>
 
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminLTE/dist/css/adminlte.min.css') }}" />
+
+    <!-- Custom style -->
+    <style>
+    .btnFlex {
+        display: flex;
+        justify-content: end;
+    }
+    </style>
     
 </head>
 <body class="hold-transition sidebar-mini">
@@ -83,14 +95,14 @@
                 <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('/')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('home') }}" class="{{ (request()->is('home')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     @if (Auth::user()->level == 1)
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('kategori')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('kategori.index') }}" class="{{ (request()->is('kategori')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-cube"></i>
                             <p>Kategori</p>
                         </a>
@@ -199,9 +211,9 @@
                 </div>
             </div>
 
-            <div class="content">
+            <section class="content">
                 @yield('content')
-            </div>
+            </section>
         </div>
 
         <!-- Main Footer -->
@@ -219,7 +231,15 @@
     <script src="{{ asset('adminLTE/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('adminLTE/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('adminLTE/dist/js/adminlte.min.js') }}"></script>
+
+    @yield('script')
+    
 </body>
 </html>
