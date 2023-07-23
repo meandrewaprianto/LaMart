@@ -117,7 +117,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('member')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('member.index') }}" class="{{ (request()->is('member')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-credit-card"></i>
                             <p>Member</p>
                         </a>

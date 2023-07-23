@@ -51,7 +51,8 @@ class ProdukController extends Controller
             $row[] = "<div class='btn-group'>
                         <a onclick='editForm(".$list->id_produk.")' class='btn btn-info btn-sm'><i class='fas fa-pen'></i></a>
                         &nbsp;&nbsp;
-                        <a onclick='deleteData(".$list->id_produk.")' class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>";
+                        <a onclick='deleteData(".$list->id_produk.")' class='btn btn-danger btn-sm'><i class='fas fa-trash'></i></a>
+                     </div>";
             $data[] = $row;
         }
 

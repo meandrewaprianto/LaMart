@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,8 @@ Route::group(['middleware' => ['cekuser:1']], function(){
   Route::post('produk/hapus', [ProdukController::class, 'deleteSelected']);
   Route::post('produk/cetak', [ProdukController::class, 'printBarcode']);
   Route::resource('produk', App\Http\Controllers\ProdukController::class);
+  // Member Route
+  Route::get('member/data', [MemberController::class, 'listData'])->name('member.data');
+  Route::post('member/cetak', [MemberController::class, 'printCard']);
+  Route::resource('member', App\Http\Controllers\MemberController::class);
 });
