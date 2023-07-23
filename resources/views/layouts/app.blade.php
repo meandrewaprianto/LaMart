@@ -28,6 +28,7 @@
     .btnFlex {
         display: flex;
         justify-content: end;
+        gap: 12px;
     }
     </style>
     
@@ -109,7 +110,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('produk')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('produk.index') }}" class="{{ (request()->is('produk')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-cubes"></i>
                             <p>Produk</p>
                         </a>

@@ -19,7 +19,10 @@
        <h3>Daftar Kategori</h3>
      </div>
      <div class="col-2 btnFlex">
-       <button class="btn btn-success pull-right" onclick="addForm()">Tambah</button>
+       <button class="btn btn-success btn-sm pull-right" onclick="addForm()">
+        <i class="fas fa-plus-circle"> </i>
+        Tambah
+       </button>
      </div>
    </div>
    </div>
