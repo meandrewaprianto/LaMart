@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,7 @@ Route::group(['middleware' => ['cekuser:1']], function(){
   Route::get('member/data', [MemberController::class, 'listData'])->name('member.data');
   Route::post('member/cetak', [MemberController::class, 'printCard']);
   Route::resource('member', App\Http\Controllers\MemberController::class);
+  // Supplier Route
+  Route::get('supplier/data', [SupplierController::class, 'listData'])->name('supplier.data');
+  Route::resource('supplier', App\Http\Controllers\SupplierController::class);
 });

@@ -124,7 +124,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('supplier')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('supplier.index') }}" class="{{ (request()->is('supplier')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-truck"></i>
                             <p>Supplier</p>
                         </a>
