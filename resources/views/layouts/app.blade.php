@@ -131,7 +131,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('pengeluaran')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('pengeluaran.index') }}" class="{{ (request()->is('pengeluaran')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-money-check-alt"></i>
                             <p>Pengeluaran</p>
                         </a>

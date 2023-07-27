@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\PengeluaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +40,7 @@ Route::group(['middleware' => ['cekuser:1']], function(){
   // Supplier Route
   Route::get('supplier/data', [SupplierController::class, 'listData'])->name('supplier.data');
   Route::resource('supplier', App\Http\Controllers\SupplierController::class);
+  // Pengeluaran Route
+  Route::get('pengeluaran/data', [PengeluaranController::class, 'listData'])->name('pengeluaran.data');
+  Route::resource('pengeluaran', App\Http\Controllers\PengeluaranController::class);
 });
