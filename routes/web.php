@@ -43,4 +43,6 @@ Route::group(['middleware' => ['cekuser:1']], function(){
   // Pengeluaran Route
   Route::get('pengeluaran/data', [PengeluaranController::class, 'listData'])->name('pengeluaran.data');
   Route::resource('pengeluaran', App\Http\Controllers\PengeluaranController::class);
+  // TODO user Route
+  // TODO Pembelian Route
 });
