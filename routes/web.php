@@ -7,6 +7,8 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PengeluaranController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PembelianDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +46,13 @@ Route::group(['middleware' => ['cekuser:1']], function(){
   Route::get('pengeluaran/data', [PengeluaranController::class, 'listData'])->name('pengeluaran.data');
   Route::resource('pengeluaran', App\Http\Controllers\PengeluaranController::class);
   // TODO user Route
-  // TODO Pembelian Route
+  // Pembelian Route
+  Route::get('pembelian/data', [PembelianController::class, 'listData'])->name('pembelian.data');
+  Route::get('pembelian/{id}/tambah', [PembelianController::class, 'create']);
+  Route::get('pembelian/{id}/lihat', [PembelianController::class, 'show']);
+  Route::resource('pembelian', App\Http\Controllers\PembelianController::class);
+  // Pembelian Detail Route
+  Route::get('pembelian_detail/{id}/data', [PembelianDetailController::class, 'listData'])->name('pembelian_detail.data');
+  Route::get('pembelian_detail/loadForm/{diskon}/{total}', [PembelianDetailController::class, 'loadForm']);
+  Route::resource('pembelian_detail', App\Http\Controllers\PembelianDetailController::class);
 });

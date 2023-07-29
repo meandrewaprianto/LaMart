@@ -28,7 +28,12 @@
     .btnFlex {
         display: flex;
         justify-content: end;
+        align-items: center;
         gap: 12px;
+    }
+
+    .hide {
+        display: none;
     }
     </style>
     
@@ -152,7 +157,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="{{ (request()->is('pembelian')) ? 'nav-link active' : 'nav-link' }}">
+                        <a href="{{ route('pembelian.store') }}" class="{{ (request()->is('pembelian')) ? 'nav-link active' : 'nav-link' }}">
                             <i class="nav-icon fas fa-download"></i>
                             <p>Pembelian</p>
                         </a>

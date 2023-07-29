@@ -12,5 +12,8 @@ class Supplier extends Model
     protected $table = 'supplier';
     protected $primaryKey = 'id_supplier';
 
-    //TODO Pembelian
+    public function pembelian() {
+        return $this->hasMany('App\Modles\Pembelian', 'id_supplier');
+    }
+
 }
